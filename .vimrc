@@ -55,14 +55,6 @@ set t_kD=^?
 " バックスペースキーの動作を普通のテキストエディタと同じようにする
 set backspace=indent,eol,start
  
-" 見た目によるカーソル移動をする(1行が複数行に渡って表示されている時に表示上の行ごとに上下移動させる)
-noremap j gj
-noremap k gk
-
-" Shift h,lによる行頭行末移動
-noremap <S-h>   ^
-noremap <S-l>   $
- 
 " シンタックスを有効にする(コードをカラーを付けて見やすくする)
 syntax enable
  
@@ -84,8 +76,7 @@ set wrap
 
 
 
-
-" マッピング
+"""""""""""""""" マッピング
 let mapleader = "\<Space>"
 nnoremap [TABCMD]  <nop>
 nmap     <leader>t [TABCMD]
@@ -102,6 +93,14 @@ nnoremap <silent> [TABCMD]s :<c-u>tabs<cr>
 
 nnoremap gn gt
 nnoremap gb gT
+
+" 見た目によるカーソル移動をする(1行が複数行に渡って表示されている時に表示上の行ごとに上下移動させる)
+noremap j gj
+noremap k gk
+
+" Shift h,lによる行頭行末移動
+noremap <S-h>   ^
+noremap <S-l>   $
 
 " ビジュアルモードでのペースト時にペーストバッファに追加されない
 function! RestoreRegister()
