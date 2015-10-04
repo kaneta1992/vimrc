@@ -87,7 +87,7 @@ nnoremap <silent> [TABCMD]n :<c-u>tabnext<cr>
 nnoremap <silent> [TABCMD]b :<c-u>tabNext<cr>
 nnoremap <silent> [TABCMD]p :<c-u>tabprevious<cr>
 nnoremap <silent> [TABCMD]e :<c-u>tabedit<cr>
-nnoremap <silent> [TABCMD]c :<c-u>tabclose<cr>
+nnoremap <silent> [TABCMD]r :<c-u>tabclose<cr>
 nnoremap <silent> [TABCMD]o :<c-u>tabonly<cr>
 nnoremap <silent> [TABCMD]s :<c-u>tabs<cr>
 
