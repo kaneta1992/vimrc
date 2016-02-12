@@ -75,9 +75,9 @@ set wrap
 
 
 
-
 """""""""""""""" マッピング
 let mapleader = "\<Space>"
+"タブ用マッピング
 nnoremap [TABCMD]  <nop>
 nmap     <leader>t [TABCMD]
 
@@ -91,24 +91,32 @@ nnoremap <silent> [TABCMD]r :<c-u>tabclose<cr>
 nnoremap <silent> [TABCMD]o :<c-u>tabonly<cr>
 nnoremap <silent> [TABCMD]s :<c-u>tabs<cr>
 
-nnoremap gn gt
-nnoremap gb gT
+"ウィンドウ用マッピング
+nnoremap [WINCMD]  <nop>
+nmap     <leader>w [WINCMD]
+
+nnoremap [WINCMD]h <c-w>h
+nnoremap [WINCMD]j <c-w>j
+nnoremap [WINCMD]k <c-w>k
+nnoremap [WINCMD]l <c-w>l
+
+nnoremap [WINCMD]> <c-w>>
+nnoremap [WINCMD]< <c-w><
+
+
 
 " 見た目によるカーソル移動をする(1行が複数行に渡って表示されている時に表示上の行ごとに上下移動させる)
 noremap j gj
 noremap k gk
 
-" Shift h,lによる行頭行末移動
-noremap <S-h>   ^
-noremap <S-l>   $
+" ctrl h,l,j,kによる移動
+nnoremap <leader>j   <S-L>
+nnoremap <leader>k   <S-H>
+nnoremap <leader>h   ^
+nnoremap <leader>l   $
 
-" ビジュアルモードでのペースト時にペーストバッファに追加されない
-function! RestoreRegister()
-    let @" = s:restore_reg
-    return ''
-    endfunction
-function! s:Repl()
-    let s:restore_reg = @"
-    return "p@=RestoreRegister()\<cr>"
-    endfunction
-vmap <silent> <expr> p <sid>Repl()
+" netrw関連
+" netrwは常にtree view
+let g:netrw_liststyle = 3
+map <leader>nt :Ntree<CR>
+map <leader>nf :e .<CR>
