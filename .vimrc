@@ -110,10 +110,10 @@ noremap j gj
 noremap k gk
 
 " ctrl h,l,j,kによる移動
-nnoremap <leader>j   <S-L>
-nnoremap <leader>k   <S-H>
-nnoremap <leader>h   ^
-nnoremap <leader>l   $
+noremap <leader>j   <S-L>
+noremap <leader>k   <S-H>
+noremap <leader>h   ^
+noremap <leader>l   $
 
 " netrw関連
 " netrwは常にtree view
