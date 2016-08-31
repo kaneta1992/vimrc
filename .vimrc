@@ -73,6 +73,10 @@ set title
 " ウィンドウの幅より長い行は折り返して表示
 set wrap
 
+" 自動改行禁止
+set textwidth=0
+" gvim用
+autocmd FileType text setlocal textwidth=0
 
 
 """""""""""""""" マッピング
@@ -102,8 +106,6 @@ nnoremap [WINCMD]l <c-w>l
 
 nnoremap [WINCMD]> <c-w>>
 nnoremap [WINCMD]< <c-w><
-
-
 
 " 見た目によるカーソル移動をする(1行が複数行に渡って表示されている時に表示上の行ごとに上下移動させる)
 noremap j gj
